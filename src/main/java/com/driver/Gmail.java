@@ -3,7 +3,7 @@ package com.driver;
 import java.util.*;
 
 public class Gmail extends Email {
-    HashMap<String,Node> hm = new HashMap<>;
+    HashMap<String,Node> hm = new HashMap<>();
     Stack<Node> st = new Stack<>();
     Queue<Node> q = new LinkedList<>();
     Queue<Node> trash = new LinkedList<>();
@@ -63,7 +63,7 @@ public class Gmail extends Email {
           Node node = st.peek();
           while(!st.isEmpty() && hm.getOrDefault(node.message,null)==null){
               st.pop();
-              node = st.peek()
+              node = st.peek();
           }
           return node.message;
       }
@@ -93,7 +93,7 @@ public class Gmail extends Email {
         if(hm.size()!=0){
           for(String s : hm.keySet()){
               Node node = hm.get(s);
-              if(node.date.after(start) && node.date.before(end){
+              if(node.date.after(start) && node.date.before(end)){
                   count++;
               }
           }
@@ -120,7 +120,7 @@ public class Gmail extends Email {
         return inboxCapacity;
     }
 }
-public class Node{
+class Node{
     Date date;
     String sender;
     String message;
